@@ -6,7 +6,7 @@
 
 ### the packages needed are: 
 
- "@turf/turf": "^7.2.0",
+    "@turf/turf": "^7.2.0",
     "echarts": "^5.6.0",
     "echarts-for-react": "^3.0.2",
     "jquery": "^3.7.1",
