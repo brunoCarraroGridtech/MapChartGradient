@@ -1,25 +1,65 @@
 const categoryColors = {
-  'Broken': '#e74c3c',
-  'Working': '#078e4c',
-  'Installed': '#7ccc63',
+  'Broken': '#DA6C6C',
+  'Working': '#BBD8A3',
+  'Installed': '#819A91',
   'No Data Available': '#bdc3c7'
 };
 
 const pieChartData = {
-  'Iperó': [
-    { value: 50, name: 'Installed' },
-    { value: 20, name: 'Working' },
-    { value: 30, name: 'Broken' },
+  'Alumínio': [
+    { value: 85, name: 'Installed' },
+    { value: 70, name: 'Working' },
+    { value: 15, name: 'Broken' },
   ],
-  'Sorocaba': [
-    { value: 70, name: 'Installed' },
-    { value: 10, name: 'Working' },
+  'Araçariguama': [
+    { value: 115, name: 'Installed' },
+    { value: 95, name: 'Working' },
     { value: 20, name: 'Broken' },
   ],
+  'Araçoiaba Da Serra': [
+    { value: 98, name: 'Installed' },
+    { value: 80, name: 'Working' },
+    { value: 18, name: 'Broken' },
+  ],
+  'Capela Do Alto': [
+    { value: 72, name: 'Installed' },
+    { value: 60, name: 'Working' },
+    { value: 12, name: 'Broken' },
+  ],
   'Ibiúna': [
-    { value: 50, name: 'Installed' },
-    { value: 24, name: 'Working' },
-    { value: 26, name: 'Broken' },
+    { value: 140, name: 'Installed' },
+    { value: 110, name: 'Working' },
+    { value: 30, name: 'Broken' },
+  ],
+  'Iperó': [
+    { value: 68, name: 'Installed' },
+    { value: 55, name: 'Working' },
+    { value: 13, name: 'Broken' },
+  ],
+  'Mairinque': [
+    { value: 121, name: 'Installed' },
+    { value: 99, name: 'Working' },
+    { value: 22, name: 'Broken' },
+  ],
+  'Salto De Pirapora': [
+    { value: 105, name: 'Installed' },
+    { value: 85, name: 'Working' },
+    { value: 20, name: 'Broken' },
+  ],
+  'São Roque': [
+    { value: 175, name: 'Installed' },
+    { value: 150, name: 'Working' },
+    { value: 25, name: 'Broken' },
+  ],
+  'Sorocaba': [
+    { value: 380, name: 'Installed' },
+    { value: 320, name: 'Working' },
+    { value: 60, name: 'Broken' },
+  ],
+  'Votorantim': [
+    { value: 240, name: 'Installed' },
+    { value: 210, name: 'Working' },
+    { value: 30, name: 'Broken' },
   ],
 };
 
@@ -90,9 +130,13 @@ const mapConfig = {
   interaction: {
     roam: true,                 // Enable pan/zoom
     scaleLimit: {               // Zoom limits
-      min: 0.5,
-      max: 3
+      min: 1.0,
+      max: 3.5
     }
+  },
+
+  legendZoom: {
+    activateLegends: 2
   }
 };
 

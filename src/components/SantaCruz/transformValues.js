@@ -1,25 +1,55 @@
 const categoryColors = {
-  'Broken': '#e74c3c',
-  'Working': '#078e4c',
-  'Installed': '#7ccc63',
+  'Broken': '#DA6C6C',
+  'Working': '#BBD8A3',
+  'Installed': '#819A91',
   'No Data Available': '#bdc3c7'
 };
 
 const pieChartData = {
+  'Barra Do Jacaré': [
+    { value: 65, name: 'Installed' },
+    { value: 50, name: 'Working' },
+    { value: 15, name: 'Broken' },
+  ],
+  'Cambará': [
+    { value: 95, name: 'Installed' },
+    { value: 80, name: 'Working' },
+    { value: 15, name: 'Broken' },
+  ],
+  'Canitar': [
+    { value: 58, name: 'Installed' },
+    { value: 45, name: 'Working' },
+    { value: 13, name: 'Broken' },
+  ],
+  'Chavantes': [
+    { value: 88, name: 'Installed' },
+    { value: 70, name: 'Working' },
+    { value: 18, name: 'Broken' },
+  ],
+  'Jacarezinho': [
+    { value: 130, name: 'Installed' },
+    { value: 110, name: 'Working' },
+    { value: 20, name: 'Broken' },
+  ],
   'Ourinhos': [
-    { value: 50, name: 'Installed' },
-    { value: 20, name: 'Working' },
+    { value: 210, name: 'Installed' },
+    { value: 180, name: 'Working' },
     { value: 30, name: 'Broken' },
   ],
   'Ribeirão Claro': [
-    { value: 70, name: 'Installed' },
-    { value: 10, name: 'Working' },
-    { value: 20, name: 'Broken' },
+    { value: 105, name: 'Installed' },
+    { value: 90, name: 'Working' },
+    { value: 15, name: 'Broken' },
   ],
-  'Cambará': [
-    { value: 50, name: 'Installed' },
-    { value: 24, name: 'Working' },
-    { value: 26, name: 'Broken' },
+  'São Pedro Do Turvo': [
+    { value: 75, name: 'Installed' },
+    { value: 60, name: 'Working' },
+    { value: 15, name: 'Broken' },
+  ],
+  'Ubirajara': [
+    { value: 62, name: 'Installed' },
+    { value: 50, name: 'Working' },
+    { value: 12, name: 'Broken' },
   ],
 };
 
@@ -91,8 +121,12 @@ const mapConfig = {
     roam: true,                 // Enable pan/zoom
     scaleLimit: {               // Zoom limits
       min: 1,
-      max: 3
+      max: 3.5
     }
+  },
+
+  legendZoom: {
+    activateLegends: 2
   }
 };
 

@@ -1,25 +1,45 @@
 const categoryColors = {
-  'Broken': '#e74c3c',
-  'Working': '#078e4c',
-  'Installed': '#7ccc63',
+  'Broken': '#DA6C6C',
+  'Working': '#BBD8A3',
+  'Installed': '#819A91',
   'No Data Available': '#bdc3c7'
 };
 
 const pieChartData = {
-  'Pontal': [
-    { value: 50, name: 'Installed' },
-    { value: 20, name: 'Working' },
-    { value: 30, name: 'Broken' },
-  ],
   'Barrinha': [
-    { value: 70, name: 'Installed' },
-    { value: 10, name: 'Working' },
-    { value: 20, name: 'Broken' },
+    { value: 88, name: 'Installed' },
+    { value: 65, name: 'Working' },
+    { value: 23, name: 'Broken' },
   ],
   'Dumont': [
-    { value: 50, name: 'Installed' },
-    { value: 24, name: 'Working' },
-    { value: 26, name: 'Broken' },
+    { value: 120, name: 'Installed' },
+    { value: 95, name: 'Working' },
+    { value: 150, name: 'Broken' },
+  ],
+  'Guatapará': [
+    { value: 75, name: 'Installed' },
+    { value: 50, name: 'Working' },
+    { value: 25, name: 'Broken' },
+  ],
+  'Luís Antônio': [
+    { value: 112, name: 'Installed' },
+    { value: 80, name: 'Working' },
+    { value: 32, name: 'Broken' },
+  ],
+  'Pontal': [
+    { value: 95, name: 'Installed' },
+    { value: 78, name: 'Working' },
+    { value: 17, name: 'Broken' },
+  ],
+  'Pradópolis': [
+    { value: 150, name: 'Installed' },
+    { value: 110, name: 'Working' },
+    { value: 40, name: 'Broken' },
+  ],
+  'Sertãozinho': [
+    { value: 210, name: 'Installed' },
+    { value: 180, name: 'Working' },
+    { value: 30, name: 'Broken' },
   ],
 };
 
@@ -91,8 +111,12 @@ const mapConfig = {
     roam: true,                 // Enable pan/zoom
     scaleLimit: {               // Zoom limits
       min: 1,
-      max: 3
+      max: 3.5
     }
+  },
+
+  legendZoom: {
+    activateLegends: 2    //change when legend is activated
   }
 };
 

@@ -159,6 +159,29 @@ const PalMapChart = () => {
     const cityData = geoJSON.features.map(feature => processCityData(feature, selectedCategories));
     chart.setOption(createChartOptions(cityData, selectedCategories));
 
+    chart.on('georoam', () => {
+      const option = chart.getOption();
+      const mapSeriesIndex = option.series.findIndex(s => s.type === 'map');
+      const mapSeries = option.series[mapSeriesIndex];
+      const zoom = mapSeries.zoom || 1;
+    
+      option.series[mapSeriesIndex].label.formatter = (params) => {
+        const data = getPieDataForLocation(params.name);
+        const filteredData = data.filter(item => selectedCategories[item.name]);
+    
+        if (zoom < mapConfig.legendZoom.activateLegends) {
+          return params.name;
+        } else {
+          const categoryLines = filteredData
+            .map(item => `${item.name}: ${item.value}`)
+            .join('\n');
+          return `${params.name}\n${categoryLines}`;
+        }
+      };
+    
+      chart.setOption(option);
+    });
+
     if (mapConfig.legend.show) {
       chart.on('legendselectchanged', (params) => {
         const newSelection = params.selected;

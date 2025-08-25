@@ -121,6 +121,10 @@ const SantMapChart = () => {
         roam: mapConfig.interaction.roam,
         scaleLimit: mapConfig.interaction.scaleLimit,
         selectedMode: false,
+        labelLayout: {
+            hideOverlap: true,   // automatically hides overlapping labels, or should idk
+            moveOverlap: 'shiftX' // move them left/right if they overlap
+          },
         label: {
           show: mapConfig.labels.show,
           color: mapConfig.labels.color,
@@ -158,6 +162,30 @@ const SantMapChart = () => {
     echarts.registerMap('SantaCruz', geoJSON);
     const cityData = geoJSON.features.map(feature => processCityData(feature, selectedCategories));
     chart.setOption(createChartOptions(cityData, selectedCategories));
+
+    chart.on('georoam', () => {
+  const option = chart.getOption();
+  const mapSeriesIndex = option.series.findIndex(s => s.type === 'map');
+  const mapSeries = option.series[mapSeriesIndex];
+  const zoom = mapSeries.zoom || 1;
+
+  // Update just the label formatter dynamically
+  option.series[mapSeriesIndex].label.formatter = (params) => {
+    const data = getPieDataForLocation(params.name);
+    const filteredData = data.filter(item => selectedCategories[item.name]);
+
+    if (zoom < mapConfig.legendZoom.activateLegends) {
+      return params.name;
+    } else {
+      const categoryLines = filteredData
+        .map(item => `${item.name}: ${item.value}`)
+        .join('\n');
+      return `${params.name}\n${categoryLines}`;
+    }
+  };
+
+  chart.setOption(option);
+});
 
     if (mapConfig.legend.show) {
       chart.on('legendselectchanged', (params) => {
