@@ -1,8 +1,8 @@
 const categoryColors = {
-  'Broken': '#86B049',
-  'Working': '#477998',
-  'Installed': '#F5A623',
-  'No Data Available': '#CCCCCC'
+  'Broken': '#e74c3c',
+  'Working': '#078e4c',
+  'Installed': '#7ccc63',
+  'No Data Available': '#bdc3c7'
 };
 
 const pieChartData = {
